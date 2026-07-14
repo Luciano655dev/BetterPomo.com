@@ -1,4 +1,5 @@
-import { WaitlistForm } from "@/components/landing/WaitlistForm";
+import { buttonVariants } from "@/components/ui/button";
+import { NewsletterForm } from "@/components/landing/NewsletterForm";
 import { StoreBadges } from "@/components/landing/StoreBadges";
 import { APP_URL } from "@/lib/api";
 
@@ -10,20 +11,29 @@ export function FinalCta() {
           Your next focus session doesn&apos;t have to be alone.
         </h2>
 
-        <div className="mt-10 w-full">
-          <WaitlistForm />
-        </div>
+        <a
+          href={APP_URL}
+          className={buttonVariants({
+            size: "lg",
+            className: "mt-10 h-12 w-full rounded-xl text-base",
+          })}
+        >
+          Try the open beta
+        </a>
 
         <div className="mt-12 w-full">
           <StoreBadges />
         </div>
 
-        <a
-          href={APP_URL}
-          className="mt-6 text-sm text-muted-foreground underline underline-offset-4 transition-colors hover:text-foreground"
-        >
-          or use the web app →
-        </a>
+        <div className="mt-12 flex items-center gap-3 text-xs text-muted-foreground">
+          <span className="h-px w-8 bg-border" />
+          stay in the loop
+          <span className="h-px w-8 bg-border" />
+        </div>
+
+        <div className="mt-6 w-full">
+          <NewsletterForm />
+        </div>
       </div>
     </section>
   );

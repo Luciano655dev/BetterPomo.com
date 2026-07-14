@@ -25,7 +25,7 @@ const securityHeaders = [
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "font-src 'self' https://fonts.gstatic.com",
       "img-src 'self' data: blob:",
-      // The waitlist POST is the only outbound call — must list the API origin.
+      // The newsletter POST is the only outbound call — must list the API origin.
       "connect-src 'self' http://localhost:4000 https://api.betterpomo.com https://*.posthog.com",
       "frame-ancestors 'none'",
     ].join("; "),

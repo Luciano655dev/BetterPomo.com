@@ -34,12 +34,12 @@ export function Vision() {
           <p>
             BetterPomo productizes it: shared, synced focus sessions with the
             social layer built in — friends, history, and accountability that
-            compounds. We&apos;re onboarding the waitlist in small cohorts and
-            building in the open.
+            compounds. It&apos;s in open beta now — free to use while we build
+            in the open.
           </p>
         </div>
 
-        {/* Roadmap pillars — swap for a real metrics row (waitlist size,
+        {/* Roadmap pillars — swap for a real metrics row (beta signups,
             sessions run, hours focused) once the numbers are worth showing. */}
         <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-border bg-border sm:grid-cols-3">
           {PILLARS.map((pillar) => (
