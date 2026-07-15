@@ -4,8 +4,8 @@ import { InstagramIcon, TikTokIcon } from "@/components/landing/BrandIcons";
 
 // ── Edit these with your real handles ────────────────────────────────────────
 const SOCIALS = {
-  instagram: "https://instagram.com/yourhandle",
-  tiktok: "https://tiktok.com/@yourhandle",
+  instagram: "https://instagram.com/betterpomo",
+  tiktok: "https://tiktok.com/@betterpomo",
 };
 
 export function SiteFooter() {

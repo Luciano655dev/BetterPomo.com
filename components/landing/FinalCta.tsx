@@ -1,5 +1,4 @@
 import { buttonVariants } from "@/components/ui/button";
-import { NewsletterForm } from "@/components/landing/NewsletterForm";
 import { StoreBadges } from "@/components/landing/StoreBadges";
 import { APP_URL } from "@/lib/api";
 
@@ -23,16 +22,6 @@ export function FinalCta() {
 
         <div className="mt-12 w-full">
           <StoreBadges />
-        </div>
-
-        <div className="mt-12 flex items-center gap-3 text-xs text-muted-foreground">
-          <span className="h-px w-8 bg-border" />
-          stay in the loop
-          <span className="h-px w-8 bg-border" />
-        </div>
-
-        <div className="mt-6 w-full">
-          <NewsletterForm />
         </div>
       </div>
     </section>

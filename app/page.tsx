@@ -6,6 +6,7 @@ import { Why } from "@/components/landing/Why";
 import { Pricing } from "@/components/landing/Pricing";
 import { Vision } from "@/components/landing/Vision";
 import { FinalCta } from "@/components/landing/FinalCta";
+import { Contact } from "@/components/landing/Contact";
 import { SiteFooter } from "@/components/landing/SiteFooter";
 
 export default function LandingPage() {
@@ -20,6 +21,7 @@ export default function LandingPage() {
         <Pricing />
         <Vision />
         <FinalCta />
+        <Contact />
       </main>
       <SiteFooter />
     </>
