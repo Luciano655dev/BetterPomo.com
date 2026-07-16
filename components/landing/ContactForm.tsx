@@ -120,7 +120,7 @@ export function ContactForm() {
 
       {error && <p role="alert" className="text-sm text-destructive">{error}</p>}
 
-      <Button type="submit" size="lg" disabled={loading} className="h-12 w-full rounded-xl text-base">
+      <Button type="submit" size="lg" disabled={loading} className="h-12 w-full rounded-full text-base">
         {loading ? "Sending…" : "Send message"}
       </Button>
     </form>

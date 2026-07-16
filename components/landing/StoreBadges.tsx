@@ -19,11 +19,11 @@ function GooglePlayIcon({ className }: { className?: string }) {
 export function StoreBadges() {
   return (
     <div className="flex flex-col items-center gap-2.5 sm:flex-row">
-      <span className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-xl border border-border px-5 text-sm text-muted-foreground sm:w-auto">
+      <span className="inline-flex h-11 w-full items-center justify-center gap-2.5 rounded-full border border-border px-6 text-sm text-muted-foreground sm:w-auto">
         <AppleIcon className="size-4" />
         App Store — coming soon
       </span>
-      <span className="inline-flex h-12 w-full items-center justify-center gap-2.5 rounded-xl border border-border px-5 text-sm text-muted-foreground sm:w-auto">
+      <span className="inline-flex h-11 w-full items-center justify-center gap-2.5 rounded-full border border-border px-6 text-sm text-muted-foreground sm:w-auto">
         <GooglePlayIcon className="size-4" />
         Google Play — coming soon
       </span>

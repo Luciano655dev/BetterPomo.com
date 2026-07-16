@@ -1,19 +1,21 @@
 import Image from "next/image";
 
-/**
- * Brand logo. One transparent asset (a black watch mark) is recolored for dark
- * mode with `dark:invert` — a dark mark on light backgrounds, a white mark on
- * dark ones, always transparent (no opaque box). Toggled purely with CSS via the
- * `dark` class on <html>, so there's no JS theme dependency or hydration flash.
- */
-export function Logo({ size = 40, className }: { size?: number; className?: string }) {
+type LogoProps = {
+  size?: number;
+  variant?: "dark" | "light";
+  className?: string;
+};
+
+/** Render the requested brand mark variant. */
+export function Logo({ size = 40, variant = "light", className }: LogoProps) {
   return (
     <Image
-      src="/Logo-transparent.png"
+      src={variant === "light" ? "/Logo_light.svg" : "/Logo_dark.svg"}
       alt="BetterPomo"
       width={size}
       height={size}
-      className={`${className ? `${className} ` : ""}dark:invert`}
+      unoptimized
+      className={className}
     />
   );
 }

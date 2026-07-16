@@ -10,6 +10,7 @@
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
   --font-heading: var(--font-sans);
+  --font-display: var(--font-display);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
@@ -39,6 +40,25 @@
   --color-popover: var(--popover);
   --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-lime: var(--lime);
+  --color-lime-soft: var(--lime-soft);
+  --color-lime-tint: var(--lime-tint);
+  --color-lime-ink: var(--lime-ink);
+  --color-tint-purple: var(--tint-purple);
+  --color-tint-purple-ink: var(--tint-purple-ink);
+  --color-tint-blue: var(--tint-blue);
+  --color-tint-blue-ink: var(--tint-blue-ink);
+  --color-tint-orange: var(--tint-orange);
+  --color-tint-orange-ink: var(--tint-orange-ink);
+  --color-tint-green: var(--tint-green);
+  --color-tint-green-ink: var(--tint-green-ink);
+  --color-tint-lime: var(--tint-lime);
+  --color-tint-lime-ink: var(--tint-lime-ink);
+  --color-panel: var(--panel);
+  --color-panel-elevated: var(--panel-elevated);
+  --color-panel-border: var(--panel-border);
+  --color-panel-foreground: var(--panel-foreground);
+  --color-panel-muted: var(--panel-muted);
   --radius-sm: calc(var(--radius) * 0.6);
   --radius-md: calc(var(--radius) * 0.8);
   --radius-lg: var(--radius);
@@ -49,85 +69,69 @@
 }
 
 :root {
-  /* Neutral gray-white page surfaces. Keep chroma at 0 so light mode does not
-     lean red, pink, or beige on warmer displays. */
-  --background: oklch(0.972 0 0);
-  /* Soft charcoal, not pure black. */
-  --foreground: oklch(0.27 0 0);
-  /* Cards sit just above the page; off-white, not pure white. */
-  --card: oklch(0.994 0 0);
-  --card-foreground: oklch(0.27 0 0);
-  --popover: oklch(0.994 0 0);
-  --popover-foreground: oklch(0.27 0 0);
-  /* Primary = the same charcoal (components use bg-foreground for buttons/nav too). */
-  --primary: oklch(0.27 0 0);
+  /* Bright near-white page. Chroma stays at 0 so the base never leans warm —
+     the lime accent and pastel tints supply all the color. */
+  --background: oklch(0.985 0 0);
+  /* Near-black ink: buttons and headlines read as black pills on white. */
+  --foreground: oklch(0.17 0 0);
+  /* Pure white for floating surfaces (navbar, step cards) — shadows need it. */
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.17 0 0);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.17 0 0);
+  /* Primary = black pill buttons. */
+  --primary: oklch(0.17 0 0);
   --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.945 0 0);
-  --secondary-foreground: oklch(0.27 0 0);
-  --muted: oklch(0.945 0 0);
-  /* zinc-500 — calm secondary text. */
+  --secondary: oklch(0.955 0 0);
+  --secondary-foreground: oklch(0.17 0 0);
+  --muted: oklch(0.955 0 0);
   --muted-foreground: oklch(0.55 0 0);
-  --accent: oklch(0.945 0 0);
-  --accent-foreground: oklch(0.27 0 0);
+  --accent: oklch(0.955 0 0);
+  --accent-foreground: oklch(0.17 0 0);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.9 0 0);
-  --input: oklch(0.9 0 0);
-  --ring: oklch(0.7 0 0);
-  --chart-1: oklch(0.27 0 0);
+  --border: oklch(0.92 0 0);
+  --input: oklch(0.92 0 0);
+  /* Lime focus rings. */
+  --ring: oklch(0.768 0.233 130.85);
+  --chart-1: oklch(0.17 0 0);
   --chart-2: oklch(0.45 0 0);
   --chart-3: oklch(0.6 0 0);
   --chart-4: oklch(0.72 0 0);
   --chart-5: oklch(0.82 0 0);
-  --radius: 0.625rem;
+  --radius: 0.75rem;
   --sidebar: oklch(0.978 0 0);
-  --sidebar-foreground: oklch(0.27 0 0);
-  --sidebar-primary: oklch(0.27 0 0);
+  --sidebar-foreground: oklch(0.17 0 0);
+  --sidebar-primary: oklch(0.17 0 0);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.945 0 0);
-  --sidebar-accent-foreground: oklch(0.27 0 0);
-  --sidebar-border: oklch(0.9 0 0);
-  --sidebar-ring: oklch(0.7 0 0);
-}
+  --sidebar-accent: oklch(0.955 0 0);
+  --sidebar-accent-foreground: oklch(0.17 0 0);
+  --sidebar-border: oklch(0.92 0 0);
+  --sidebar-ring: oklch(0.768 0.233 130.85);
 
-.dark {
-  /* Lifted off pure black — soft charcoal base (~zinc-900) so it reads as dark,
-     not an abyss. */
-  --background: oklch(0.185 0.005 286);
-  /* Softened off-white text instead of glaring pure white. */
-  --foreground: oklch(0.93 0.003 286);
-  /* Cards a step above the base for gentle elevation. */
-  --card: oklch(0.235 0.006 286);
-  --card-foreground: oklch(0.93 0.003 286);
-  --popover: oklch(0.235 0.006 286);
-  --popover-foreground: oklch(0.93 0.003 286);
-  /* Primary is the soft off-white (buttons/active nav use bg-foreground). */
-  --primary: oklch(0.93 0.003 286);
-  --primary-foreground: oklch(0.21 0.006 286);
-  --secondary: oklch(0.285 0.006 286);
-  --secondary-foreground: oklch(0.93 0.003 286);
-  --muted: oklch(0.285 0.006 286);
-  /* readable muted text */
-  --muted-foreground: oklch(0.7 0.014 286);
-  --accent: oklch(0.285 0.006 286);
-  --accent-foreground: oklch(0.93 0.003 286);
-  --destructive: oklch(0.65 0.2 25);
-  /* visible but soft border */
-  --border: oklch(0.33 0.008 286);
-  --input: oklch(0.285 0.006 286);
-  --ring: oklch(0.5 0.012 286);
-  --chart-1: oklch(0.93 0.003 286);
-  --chart-2: oklch(0.72 0.014 286);
-  --chart-3: oklch(0.58 0.012 286);
-  --chart-4: oklch(0.45 0.01 286);
-  --chart-5: oklch(0.33 0.008 286);
-  --sidebar: oklch(0.21 0.006 286);
-  --sidebar-foreground: oklch(0.93 0.003 286);
-  --sidebar-primary: oklch(0.93 0.003 286);
-  --sidebar-primary-foreground: oklch(0.21 0.006 286);
-  --sidebar-accent: oklch(0.285 0.006 286);
-  --sidebar-accent-foreground: oklch(0.93 0.003 286);
-  --sidebar-border: oklch(0.33 0.008 286);
-  --sidebar-ring: oklch(0.5 0.012 286);
+  /* ── Brand accent: lime (Tailwind lime oklch values) ─────────────────── */
+  --lime: oklch(0.768 0.233 130.85); /* lime-500 — primary accent */
+  --lime-soft: oklch(0.897 0.196 126.665); /* lime-300 — active nav pill, secondary CTA */
+  --lime-tint: oklch(0.967 0.067 122.328); /* lime-100 — eyebrow pills, washes */
+  --lime-ink: oklch(0.274 0.072 132.109); /* lime-950 — text on lime surfaces */
+
+  /* ── Pastel bento tints (card bg) + matching saturated heading inks ──── */
+  --tint-purple: oklch(0.946 0.033 307.174);
+  --tint-purple-ink: oklch(0.558 0.288 302.321);
+  --tint-blue: oklch(0.932 0.032 255.585);
+  --tint-blue-ink: oklch(0.546 0.245 262.881);
+  --tint-orange: oklch(0.954 0.038 75.164);
+  --tint-orange-ink: oklch(0.646 0.222 41.116);
+  --tint-green: oklch(0.962 0.044 156.743);
+  --tint-green-ink: oklch(0.627 0.194 149.214);
+  --tint-lime: oklch(0.986 0.031 120.757);
+  --tint-lime-ink: oklch(0.532 0.157 131.589);
+
+  /* ── Dark app-preview panel (the page's one dark element) ────────────── */
+  --panel: oklch(0.185 0.005 286);
+  --panel-elevated: oklch(0.285 0.006 286);
+  --panel-border: oklch(0.33 0.008 286);
+  --panel-foreground: oklch(0.93 0.003 286);
+  --panel-muted: oklch(0.7 0.014 286);
 }
 
 @layer base {
@@ -139,5 +143,9 @@
   }
   html {
     @apply font-sans;
+  }
+  /* Anchored sections must clear the fixed pill navbar when scroll-jumped. */
+  section[id] {
+    scroll-margin-top: 6rem;
   }
 }

@@ -10,43 +10,51 @@ const SOCIALS = {
 
 export function SiteFooter() {
   return (
-    <footer className="border-t border-border">
-      <div className="mx-auto flex w-full max-w-5xl flex-col items-center gap-5 px-6 py-12">
-        <div className="flex items-center gap-2.5">
-          <Logo size={22} />
-          <span className="text-sm font-semibold tracking-tight">BetterPomo</span>
+    <footer className="px-4 pb-10 sm:px-6">
+      <div className="mx-auto w-full max-w-5xl border-t border-border pt-10">
+        <div className="flex flex-col items-center justify-between gap-6 sm:flex-row">
+          <div className="flex items-center gap-2.5">
+            <Logo size={22} />
+            <span className="text-sm font-bold tracking-tight">BetterPomo</span>
+          </div>
+
+          <div className="flex items-center gap-3 text-xs text-muted-foreground">
+            <Link href="/privacy" className="transition-colors hover:text-foreground">
+              Privacy
+            </Link>
+            <span aria-hidden>·</span>
+            <Link href="/terms" className="transition-colors hover:text-foreground">
+              Terms
+            </Link>
+            <span aria-hidden>·</span>
+            <Link href="/license" className="transition-colors hover:text-foreground">
+              License
+            </Link>
+          </div>
+
+          <div className="flex items-center gap-2">
+            <a
+              href={SOCIALS.instagram}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="flex size-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              <InstagramIcon className="size-4" />
+            </a>
+            <a
+              href={SOCIALS.tiktok}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="TikTok"
+              className="flex size-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+            >
+              <TikTokIcon className="size-4" />
+            </a>
+          </div>
         </div>
 
-        <div className="flex items-center gap-5 text-sm text-muted-foreground">
-          <a
-            href={SOCIALS.instagram}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
-          >
-            <InstagramIcon className="size-4" />
-            Instagram
-          </a>
-          <a
-            href={SOCIALS.tiktok}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground"
-          >
-            <TikTokIcon className="size-4" />
-            TikTok
-          </a>
-        </div>
-
-        <div className="flex items-center gap-3 text-xs text-muted-foreground">
-          <Link href="/privacy" className="transition-colors hover:text-foreground">Privacy</Link>
-          <span aria-hidden>·</span>
-          <Link href="/terms" className="transition-colors hover:text-foreground">Terms</Link>
-          <span aria-hidden>·</span>
-          <Link href="/license" className="transition-colors hover:text-foreground">License</Link>
-        </div>
-
-        <p className="text-xs text-muted-foreground">
+        <p className="mt-8 text-center text-xs text-muted-foreground">
           © {new Date().getFullYear()} BetterPomo. All rights reserved.
         </p>
       </div>

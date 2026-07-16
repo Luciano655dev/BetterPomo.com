@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Geist_Mono } from "next/font/google";
+import {
+  Plus_Jakarta_Sans,
+  Geist_Mono,
+  Special_Gothic_Expanded_One,
+} from "next/font/google";
 import { PostHogProvider } from "@/components/PostHogProvider";
 import "./globals.css";
 
@@ -14,14 +18,22 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+/* Wide display face for the giant timer numerals — the typographic signature
+ * of the new identity. Single weight (400) by design. */
+const display = Special_Gothic_Expanded_One({
+  variable: "--font-display",
+  subsets: ["latin"],
+  weight: "400",
+});
+
 const SITE_URL = "https://betterpomo.com";
 const DESCRIPTION =
-  "A shared Pomodoro and focus timer for teams and study groups. Run sessions together, track your history, and stay focused — better, together.";
+  "BetterPomo is a shared Pomodoro room: one code, one clock — you and your people on the same 25 minutes. Synced timers, live chat, and a focus history that adds up.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "BetterPomo — Shared Pomodoro Timer",
+    default: "BetterPomo — Focus together, live",
     template: "%s — BetterPomo",
   },
   description: DESCRIPTION,
@@ -36,10 +48,21 @@ export const metadata: Metadata = {
     "productivity",
   ],
   icons: {
-    icon: "/Logo-transparent.png",
+    icon: [
+      {
+        url: "/Icon_light.png",
+        type: "image/png",
+        media: "(prefers-color-scheme: light)",
+      },
+      {
+        url: "/Icon_dark.png",
+        type: "image/png",
+        media: "(prefers-color-scheme: dark)",
+      },
+    ],
   },
   openGraph: {
-    title: "BetterPomo — Shared Pomodoro Timer",
+    title: "BetterPomo — Focus together, live",
     description: DESCRIPTION,
     url: "/",
     siteName: "BetterPomo",
@@ -55,7 +78,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "BetterPomo — Shared Pomodoro Timer",
+    title: "BetterPomo — Focus together, live",
     description: DESCRIPTION,
     images: ["/preview-image.png"],
   },
@@ -73,7 +96,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${jakarta.variable} ${geistMono.variable} h-full antialiased scroll-smooth`}
+      className={`${jakarta.variable} ${geistMono.variable} ${display.variable} h-full antialiased scroll-smooth`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
         <PostHogProvider>{children}</PostHogProvider>

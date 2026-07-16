@@ -67,31 +67,30 @@ const TIERS: {
 export function Pricing() {
   if (!BILLING_ENABLED) return null;
   return (
-    <section id="pricing" className="border-t border-border">
-      <div className="mx-auto w-full max-w-5xl px-6 py-24 sm:py-28">
-        <p className="text-xs font-medium uppercase tracking-[0.18em] text-muted-foreground">
-          Pricing
-        </p>
-        <h2 className="mt-4 max-w-lg text-2xl font-semibold leading-snug tracking-tight sm:text-3xl">
-          Free to focus. Pro when you&apos;re all in.
-        </h2>
-        <p className="mt-4 max-w-lg text-sm leading-relaxed text-muted-foreground sm:text-base">
-          Sessions, friends, and chat are free forever. Pro unlocks your full
-          record and the power features — with a 7-day free trial, and a clear
-          reminder before it ends.
-        </p>
+    <section id="pricing" className="px-4 py-20 sm:px-6 sm:py-24">
+      <div className="mx-auto w-full max-w-5xl">
+        <div className="mx-auto max-w-xl text-center">
+          <h2 className="text-3xl font-semibold tracking-tight sm:text-4xl">
+            Free to focus. Pro when you&apos;re all in.
+          </h2>
+          <p className="mt-3 text-base leading-relaxed text-muted-foreground">
+            Sessions, friends, and chat are free forever. Pro unlocks your full
+            record and the power features — with a 7-day free trial, and a
+            clear reminder before it ends.
+          </p>
+        </div>
 
         <div className="mt-12 grid gap-4 md:grid-cols-3">
           {TIERS.map((tier) => (
             <div
               key={tier.name}
               className={[
-                "relative flex flex-col rounded-2xl border p-7",
-                tier.highlight ? "border-foreground" : "border-border",
+                "relative flex flex-col rounded-3xl bg-card p-7 shadow-sm",
+                tier.highlight ? "ring-2 ring-lime" : "ring-1 ring-black/5",
               ].join(" ")}
             >
               {tier.flag && (
-                <span className="absolute -top-2.5 left-7 rounded-full bg-foreground px-2.5 py-0.5 text-[11px] font-medium text-background">
+                <span className="absolute -top-3 left-7 rounded-full bg-lime px-3 py-1 text-[11px] font-semibold text-lime-ink">
                   {tier.flag}
                 </span>
               )}
@@ -108,7 +107,7 @@ export function Pricing() {
               <ul className="mt-6 flex-1 space-y-2.5 text-sm leading-relaxed">
                 {tier.features.map((f) => (
                   <li key={f} className="flex gap-2.5">
-                    <span aria-hidden className="mt-[3px] text-muted-foreground">✓</span>
+                    <span aria-hidden className="mt-[3px] text-lime-ink">✓</span>
                     <span>{f}</span>
                   </li>
                 ))}
@@ -116,9 +115,9 @@ export function Pricing() {
               <a
                 href={tier.href}
                 className={[
-                  "mt-8 inline-flex h-10 items-center justify-center rounded-lg px-4 text-sm font-medium transition-colors",
+                  "mt-8 inline-flex h-11 items-center justify-center rounded-full px-5 text-sm font-medium transition-opacity hover:opacity-90",
                   tier.highlight
-                    ? "bg-foreground text-background hover:bg-foreground/90"
+                    ? "bg-primary text-primary-foreground"
                     : "border border-border hover:bg-muted",
                 ].join(" ")}
               >
@@ -128,7 +127,7 @@ export function Pricing() {
           ))}
         </div>
 
-        <p className="mt-8 text-xs text-muted-foreground">
+        <p className="mt-8 text-center text-xs text-muted-foreground">
           Prices in USD. Subscribe on the web with Stripe, or in the iOS/Android
           app through the App Store and Google Play. Cancel anytime.
         </p>
