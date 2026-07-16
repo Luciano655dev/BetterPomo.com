@@ -55,7 +55,7 @@ export const metadata: Metadata = {
         media: "(prefers-color-scheme: light)",
       },
       {
-        url: "/Icon_dark.png",
+        url: "/Icon_light.png",
         type: "image/png",
         media: "(prefers-color-scheme: dark)",
       },

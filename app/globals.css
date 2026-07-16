@@ -144,6 +144,9 @@
   html {
     @apply font-sans;
   }
+  button {
+    @apply cursor-pointer;
+  }
   /* Anchored sections must clear the fixed pill navbar when scroll-jumped. */
   section[id] {
     scroll-margin-top: 6rem;
