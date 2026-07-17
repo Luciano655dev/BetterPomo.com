@@ -66,6 +66,14 @@ export function PillNav() {
         </div>
 
         <a
+          href="/status"
+          className="hidden items-center gap-1.5 rounded-full px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground lg:flex"
+        >
+          <span className="size-1.5 rounded-full bg-lime" aria-hidden="true" />
+          Status
+        </a>
+
+        <a
           href={APP_URL}
           className="ml-1 rounded-full bg-primary px-4 py-1.5 text-sm font-medium text-primary-foreground transition-opacity hover:opacity-90"
         >

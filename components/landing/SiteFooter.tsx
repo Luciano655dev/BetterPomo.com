@@ -19,6 +19,11 @@ export function SiteFooter() {
           </div>
 
           <div className="flex items-center gap-3 text-xs text-muted-foreground">
+            <Link href="/status" className="inline-flex items-center gap-1.5 transition-colors hover:text-foreground">
+              <span className="size-1.5 rounded-full bg-lime" aria-hidden="true" />
+              Status
+            </Link>
+            <span aria-hidden>·</span>
             <Link href="/privacy" className="transition-colors hover:text-foreground">
               Privacy
             </Link>
