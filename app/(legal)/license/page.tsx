@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "License",
   description: "The BetterPomo Non-Commercial License.",
+  alternates: { canonical: "/license" },
 };
 
 export default function LicensePage() {

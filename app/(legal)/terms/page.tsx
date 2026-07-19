@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Use",
   description: "The terms that govern your use of BetterPomo.",
+  alternates: { canonical: "/terms" },
 };
 
 const CONTACT_EMAIL = "lucianomenezes655@gmail.com";

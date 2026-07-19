@@ -5,6 +5,13 @@ import {
   Special_Gothic_Expanded_One,
 } from "next/font/google";
 import { PostHogProvider } from "@/components/PostHogProvider";
+import {
+  CREATOR_NAME,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_TITLE,
+  SITE_URL,
+} from "@/lib/site";
 import "./globals.css";
 
 const jakarta = Plus_Jakarta_Sans({
@@ -26,27 +33,31 @@ const display = Special_Gothic_Expanded_One({
   weight: "400",
 });
 
-const SITE_URL = "https://betterpomo.com";
-const DESCRIPTION =
-  "BetterPomo is a shared Pomodoro room: one code, one clock — you and your people on the same 25 minutes. Synced timers, live chat, and a focus history that adds up.";
-
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
+  applicationName: SITE_NAME,
   title: {
-    default: "BetterPomo — Focus together, live",
-    template: "%s — BetterPomo",
+    default: SITE_TITLE,
+    template: `%s | ${SITE_NAME}`,
   },
-  description: DESCRIPTION,
+  description: SITE_DESCRIPTION,
+  authors: [{ name: CREATOR_NAME, url: "https://github.com/luciano655dev" }],
+  creator: CREATOR_NAME,
+  publisher: SITE_NAME,
+  category: "productivity",
   keywords: [
-    "pomodoro",
+    "shared Pomodoro timer",
     "pomodoro timer",
+    "online Pomodoro timer",
     "shared timer",
     "focus timer",
     "study together",
+    "study with friends online",
     "body doubling",
     "coworking timer",
-    "productivity",
+    "focus room",
   ],
+  manifest: "/manifest.webmanifest",
   icons: {
     icon: [
       {
@@ -62,30 +73,41 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "BetterPomo — Focus together, live",
-    description: DESCRIPTION,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     url: "/",
-    siteName: "BetterPomo",
+    siteName: SITE_NAME,
+    locale: "en_US",
     type: "website",
     images: [
       {
         url: "/preview-image.png",
         width: 1731,
         height: 909,
-        alt: "BetterPomo — focus is better, together",
+        alt: "BetterPomo shared Pomodoro timer and focus room",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "BetterPomo — Focus together, live",
-    description: DESCRIPTION,
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
     images: ["/preview-image.png"],
   },
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
   },
+  verification: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    ? { google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }
+    : undefined,
 };
 
 export default function RootLayout({

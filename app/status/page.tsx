@@ -7,6 +7,7 @@ import { getPublicStatus } from "@/lib/api";
 export const metadata: Metadata = {
   title: "Status",
   description: "Live BetterPomo service health and anonymous product activity metrics.",
+  alternates: { canonical: "/status" },
 };
 
 export default async function StatusPage() {

@@ -300,7 +300,7 @@ export function SessionPreview() {
       <div className="grid lg:grid-cols-[minmax(0,1fr)_20rem]">
         <div
           className={`relative flex min-h-[30rem] flex-col items-center justify-center overflow-hidden px-5 py-10 transition-colors duration-700 sm:min-h-[36rem] sm:px-10 ${
-            timerMode === "pomodoro" && breakMode ? "bg-emerald-950/20" : ""
+            timerMode === "pomodoro" && breakMode ? "bg-white/5" : ""
           }`}
         >
           <div
@@ -579,7 +579,7 @@ export function SessionPreview() {
                       <span
                         className={`rounded-2xl px-3 py-1.5 text-sm ${
                           message.own
-                            ? "rounded-tr-sm bg-lime text-lime-ink"
+                            ? "rounded-tr-sm bg-lime text-background"
                             : "rounded-tl-sm bg-panel-elevated"
                         }`}
                       >
@@ -605,7 +605,7 @@ export function SessionPreview() {
                 <button
                   type="submit"
                   disabled={!messageDraft.trim()}
-                  className="inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-lime text-lime-ink transition-opacity disabled:opacity-35"
+                  className="inline-flex size-9 shrink-0 items-center justify-center rounded-full bg-lime text-background transition-opacity disabled:opacity-35"
                   aria-label="Send demo message"
                 >
                   <Send aria-hidden className="size-4" />
@@ -688,7 +688,7 @@ export function SessionPreview() {
                       <span
                         className={`inline-flex size-4 shrink-0 items-center justify-center rounded border ${
                           todo.done
-                            ? "border-lime bg-lime text-lime-ink"
+                            ? "border-lime bg-lime text-background"
                             : "border-panel-border"
                         }`}
                       >
@@ -724,7 +724,7 @@ export function SessionPreview() {
                             aria-label={`${isActive ? "Pause" : "Play"} ${sound.name}`}
                             className={`inline-flex size-5 shrink-0 items-center justify-center rounded-full border ${
                               isActive
-                                ? "border-lime bg-lime text-lime-ink"
+                                ? "border-lime bg-lime text-background"
                                 : "border-panel-border text-panel-muted"
                             }`}
                           >

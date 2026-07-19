@@ -69,8 +69,7 @@
 }
 
 :root {
-  /* Bright near-white page. Chroma stays at 0 so the base never leans warm —
-     the lime accent and pastel tints supply all the color. */
+  /* Bright near-white page. Chroma stays at 0 so the base never leans warm. */
   --background: oklch(0.985 0 0);
   /* Near-black ink: buttons and headlines read as black pills on white. */
   --foreground: oklch(0.17 0 0);
@@ -91,8 +90,7 @@
   --destructive: oklch(0.577 0.245 27.325);
   --border: oklch(0.92 0 0);
   --input: oklch(0.92 0 0);
-  /* Lime focus rings. */
-  --ring: oklch(0.768 0.233 130.85);
+  --ring: oklch(0.7 0 0);
   --chart-1: oklch(0.17 0 0);
   --chart-2: oklch(0.45 0 0);
   --chart-3: oklch(0.6 0 0);
@@ -106,13 +104,14 @@
   --sidebar-accent: oklch(0.955 0 0);
   --sidebar-accent-foreground: oklch(0.17 0 0);
   --sidebar-border: oklch(0.92 0 0);
-  --sidebar-ring: oklch(0.768 0.233 130.85);
+  --sidebar-ring: oklch(0.7 0 0);
 
-  /* ── Brand accent: lime (Tailwind lime oklch values) ─────────────────── */
-  --lime: oklch(0.768 0.233 130.85); /* lime-500 — primary accent */
-  --lime-soft: oklch(0.897 0.196 126.665); /* lime-300 — active nav pill, secondary CTA */
-  --lime-tint: oklch(0.967 0.067 122.328); /* lime-100 — eyebrow pills, washes */
-  --lime-ink: oklch(0.274 0.072 132.109); /* lime-950 — text on lime surfaces */
+  /* Monochrome brand accents. The legacy token names remain so existing
+     components inherit the new palette without changing their structure. */
+  --lime: oklch(0.17 0 0);
+  --lime-soft: oklch(0.92 0 0);
+  --lime-tint: oklch(0.965 0 0);
+  --lime-ink: oklch(0.17 0 0);
 
   /* ── Pastel bento tints (card bg) + matching saturated heading inks ──── */
   --tint-purple: oklch(0.946 0.033 307.174);
@@ -121,10 +120,10 @@
   --tint-blue-ink: oklch(0.546 0.245 262.881);
   --tint-orange: oklch(0.954 0.038 75.164);
   --tint-orange-ink: oklch(0.646 0.222 41.116);
-  --tint-green: oklch(0.962 0.044 156.743);
-  --tint-green-ink: oklch(0.627 0.194 149.214);
-  --tint-lime: oklch(0.986 0.031 120.757);
-  --tint-lime-ink: oklch(0.532 0.157 131.589);
+  --tint-green: oklch(0.955 0 0);
+  --tint-green-ink: oklch(0.28 0 0);
+  --tint-lime: oklch(0.975 0 0);
+  --tint-lime-ink: oklch(0.28 0 0);
 
   /* ── Dark app-preview panel (the page's one dark element) ────────────── */
   --panel: oklch(0.185 0.005 286);

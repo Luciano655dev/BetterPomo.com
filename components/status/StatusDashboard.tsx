@@ -142,7 +142,7 @@ export function StatusDashboard({ status }: { status: PublicStatus | null }) {
                   points={metrics.series}
                   series={[
                     { key: "sessionsCreated", label: "Created", color: "#111111" },
-                    { key: "activeSessionsPeak", label: "Peak live", color: "#84cc16" },
+                    { key: "activeSessionsPeak", label: "Peak live", color: "#737373" },
                   ]}
                 />
               </div>

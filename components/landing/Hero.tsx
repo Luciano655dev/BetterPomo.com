@@ -51,7 +51,7 @@ export function Hero() {
         </div>
         <a
           href={APP_URL}
-          className="inline-flex h-10 shrink-0 items-center rounded-full bg-lime px-5 text-sm font-semibold text-lime-ink transition-transform hover:scale-[1.02] active:scale-95"
+          className="inline-flex h-10 shrink-0 items-center rounded-full bg-lime px-5 text-sm font-semibold text-background transition-transform hover:scale-[1.02] active:scale-95"
         >
           Create a real room →
         </a>

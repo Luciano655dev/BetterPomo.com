@@ -90,7 +90,7 @@ export function Pricing() {
               ].join(" ")}
             >
               {tier.flag && (
-                <span className="absolute -top-3 left-7 rounded-full bg-lime px-3 py-1 text-[11px] font-semibold text-lime-ink">
+                <span className="absolute -top-3 left-7 rounded-full bg-lime px-3 py-1 text-[11px] font-semibold text-background">
                   {tier.flag}
                 </span>
               )}

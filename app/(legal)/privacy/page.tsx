@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy",
   description: "How BetterPomo collects, uses, and protects your data.",
+  alternates: { canonical: "/privacy" },
 };
 
 const CONTACT_EMAIL = "lucianomenezes655@gmail.com";

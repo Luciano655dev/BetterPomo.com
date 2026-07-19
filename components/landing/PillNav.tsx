@@ -10,6 +10,7 @@ const LINKS: { id: string; label: string }[] = [
   { id: "preview", label: "Preview" },
   { id: "features", label: "Features" },
   ...(BILLING_ENABLED ? [{ id: "pricing", label: "Pricing" }] : []),
+  { id: "faq", label: "FAQ" },
   { id: "contact", label: "Contact" },
 ];
 
