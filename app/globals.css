@@ -120,10 +120,10 @@
   --tint-blue-ink: oklch(0.546 0.245 262.881);
   --tint-orange: oklch(0.954 0.038 75.164);
   --tint-orange-ink: oklch(0.646 0.222 41.116);
-  --tint-green: oklch(0.955 0 0);
-  --tint-green-ink: oklch(0.28 0 0);
-  --tint-lime: oklch(0.975 0 0);
-  --tint-lime-ink: oklch(0.28 0 0);
+  --tint-green: oklch(0.962 0.044 156.743);
+  --tint-green-ink: oklch(0.627 0.194 149.214);
+  --tint-lime: oklch(0.986 0.031 120.757);
+  --tint-lime-ink: oklch(0.532 0.157 131.589);
 
   /* ── Dark app-preview panel (the page's one dark element) ────────────── */
   --panel: oklch(0.185 0.005 286);
